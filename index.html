@@ -5,19 +5,39 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simone &amp; Matthijs</title>
-    <script type="module" crossorigin src="./assets/index-CDkslycz.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-vwAL0QcP.css">
+    <script type="module" crossorigin src="./assets/index-loSsD39n.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B-_PUKUH.css">
   </head>
   <body class="antialiased">
     <div id="app">
-      <div class="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 flex items-center justify-center px-4 py-12 relative">
+      <div class="min-h-screen bg-gradient-to-br from-[#fffffe] via-[#fcfcfb] to-[#faf9f7] flex items-center justify-center px-4 py-12 relative overflow-hidden">
         <!-- Paper texture overlay -->
-        <div class="absolute inset-0 opacity-30" style="background-image: url('data:image/svg+xml,%3Csvg width=%22100%22 height=%22100%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 /%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.05%22/%3E%3C/svg%3E');"></div>
+        <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,%3Csvg width=%22100%22 height=%22100%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 /%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.05%22/%3E%3C/svg%3E');"></div>
+
+        <!-- Left circular background image with gradient fade -->
+        <div class="absolute left-8 md:left-16 top-1/2 -translate-y-1/2 w-80 h-80 md:w-[450px] md:h-[450px] opacity-10 pointer-events-none">
+          <div class="w-full h-full relative">
+            <div class="absolute inset-0 rounded-full overflow-hidden">
+              <img src="./chateausoulac.jpg" alt="" class="w-full h-full object-cover" />
+            </div>
+            <div class="absolute inset-0" style="background: radial-gradient(circle, transparent 0%, transparent 40%, #fffffe 70%);"></div>
+          </div>
+        </div>
+
+        <!-- Right circular background image with gradient fade -->
+        <div class="absolute right-8 md:right-16 top-1/2 -translate-y-1/2 w-80 h-80 md:w-[450px] md:h-[450px] opacity-10 pointer-events-none">
+          <div class="w-full h-full relative">
+            <div class="absolute inset-0 rounded-full overflow-hidden">
+              <img src="./chateausoulac.jpg" alt="" class="w-full h-full object-cover" />
+            </div>
+            <div class="absolute inset-0" style="background: radial-gradient(circle, transparent 0%, transparent 40%, #fffffe 70%);"></div>
+          </div>
+        </div>
 
         <div class="max-w-2xl w-full fade-in relative z-10">
           <!-- Ornamental border container -->
-          <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-1 shadow-2xl" style="border: 2px solid #d4af37;">
-            <div class="bg-gradient-to-br from-[#fdfbf7] to-[#f9f6f0] border-4 border-double border-amber-700/20 p-8 md:p-12">
+          <div class="bg-gradient-to-br from-[#fffffe] to-[#fcfcfb] p-1 shadow-2xl" style="border: 2px solid #d4af37;">
+            <div class="bg-gradient-to-br from-[#fffffe] to-[#fdfbf7] border-4 border-double border-amber-700/20 p-8 md:p-12">
 
               <!-- Decorative top ornament -->
               <div class="text-center mb-8">
@@ -31,7 +51,7 @@
               </div>
 
               <!-- Form section with vintage paper style -->
-              <div class="bg-[#fffef9] border border-amber-700/10 shadow-inner p-6 md:p-8 mt-8">
+              <div class="bg-[#fffffd] border border-amber-700/10 shadow-inner p-6 md:p-8 mt-8">
                 <form id="signup-form" class="space-y-6">
                   <div>
                     <label for="name" class="block text-sm font-serif text-amber-900 mb-2 tracking-wide">
@@ -42,7 +62,7 @@
                       id="name"
                       name="name"
                       required
-                      class="w-full px-4 py-3 bg-[#fffef9] border-b-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none font-serif text-amber-900"
+                      class="w-full px-4 py-3 bg-[#fffffd] border-b-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none font-serif text-amber-900"
                       placeholder="Your name"
                       style="border-radius: 0;"
                     />
@@ -57,7 +77,7 @@
                       id="email"
                       name="email"
                       required
-                      class="w-full px-4 py-3 bg-[#fffef9] border-b-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none font-serif text-amber-900"
+                      class="w-full px-4 py-3 bg-[#fffffd] border-b-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none font-serif text-amber-900"
                       placeholder="your.email@example.com"
                       style="border-radius: 0;"
                     />
@@ -72,7 +92,7 @@
                       name="address"
                       rows="3"
                       required
-                      class="w-full px-4 py-3 bg-[#fffef9] border-b-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none resize-none font-serif text-amber-900"
+                      class="w-full px-4 py-3 bg-[#fffffd] border-b-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none resize-none font-serif text-amber-900"
                       placeholder="Your address"
                       style="border-radius: 0;"
                     ></textarea>
@@ -80,7 +100,7 @@
 
                   <button
                     type="submit"
-                    class="w-full bg-gradient-to-b from-amber-700 to-amber-800 text-[#fdfbf7] py-4 font-serif tracking-widest uppercase text-sm hover:from-amber-800 hover:to-amber-900 transition-all shadow-md hover:shadow-lg border border-amber-900/20"
+                    class="w-full bg-gradient-to-b from-amber-700 to-amber-800 text-[#fffffe] py-4 font-serif tracking-widest uppercase text-sm hover:from-amber-800 hover:to-amber-900 transition-all shadow-md hover:shadow-lg border border-amber-900/20"
                     style="border-radius: 0;"
                   >
                     Submit
