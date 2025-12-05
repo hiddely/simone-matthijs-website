@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simone &amp; Matthijs Gaan Trouwen!</title>
-    <script type="module" crossorigin src="./assets/index.By3phCnn.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index.DgfNIEj3.css">
+    <script type="module" crossorigin src="./assets/index.DRZI_MBZ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index.DSEx04au.css">
   </head>
   <body class="antialiased">
     <div id="app">
@@ -37,55 +37,77 @@
 
         <div class="max-w-4xl w-full fade-in relative z-10">
           <!-- Ornamental border container -->
-          <div class="bg-gradient-to-br from-[#fffffe] to-[#fcfcfb] p-1 shadow-2xl" style="border: 2px solid #d4af37;">
-            <div class="bg-gradient-to-br from-[#fffffe] to-[#fdfbf7] border-4 border-double border-amber-700/20 p-8 md:p-12">
+          <div class="bg-gradient-to-br from-[#fffffe] to-[#fcfcfb] p-1 shadow-2xl" style="border: 2px solid #b8a089;">
+            <div class="bg-gradient-to-br from-[#fffffe] to-[#fdfbf7] border-4 border-double border-amber-700/20 p-8 md:p-12" style="border-color: rgba(139, 117, 93, 0.2);">
 
               <!-- Decorative top ornament -->
               <div class="text-center mb-8">
-                <div class="text-amber-700/40 text-3xl mb-6">❦</div>
-                <h1 class="text-4xl md:text-5xl font-serif text-amber-900 mb-2 tracking-wide" style="font-family: 'Didot', 'Bodoni MT', 'Playfair Display', Georgia, serif;">
+                <p class="text-amber-700/60 text-md tracking-widest uppercase font-serif mb-3">Save the Date</p>
+                <h1 class="text-5xl mt-4 md:text-5xl font-serif text-amber-900 mb-2 tracking-wide" style="font-family: 'Didot', 'Bodoni MT', 'Playfair Display', Georgia, serif;">
                   Simone <span class="text-amber-700">&</span> Matthijs
                 </h1>
                 <div class="w-32 h-px bg-gradient-to-r from-transparent via-amber-700/30 to-transparent mx-auto my-6 delayed-fade opacity-0"></div>
-                <p class="text-amber-800 text-xl font-serif italic mb-3 delayed-fade opacity-0">Spread The LLove op <span id="date-clickable" class="cursor-pointer hover:text-amber-900 transition-colors">21 + 22 + 23 augustus 2026</span></p>
-                <p class="text-amber-700/70 text-sm tracking-widest uppercase delayed-fade opacity-0">Laat je gegevens achter</p>
+
+                <!-- Date and Location side by side -->
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-4 delayed-fade opacity-0">
+                  <!-- Date -->
+                  <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-amber-700/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <p class="text-amber-800 text-lg md:text-xl font-serif italic">
+                      <span id="date-clickable" class="cursor-pointer hover:text-amber-900 transition-colors">21 + 22 + 23 augustus 2026</span>
+                    </p>
+                  </div>
+
+                  <!-- Location -->
+                  <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-amber-700/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <p class="text-amber-800 text-lg md:text-xl font-serif italic">Ch&acirc;teau Soulac, Bordeaux</p>
+                  </div>
+                </div>
+
+                <p class="text-amber-700/70 text-sm tracking-wide uppercase delayed-fade opacity-0 mt-6">Laat je adres achter om de officiële uitnodiging te ontvangen.</p>
               </div>
 
               <!-- Form section with vintage paper style -->
               <div class="md:mx-32 bg-[#fffffd] border border-amber-700/10 shadow-inner p-6 md:p-8 mt-8 delayed-fade opacity-0">
                 <form id="signup-form" class="space-y-6">
                   <div>
-                    <label for="name" class="block text-sm font-serif text-amber-900 mb-2 tracking-wide">
-                      Volledige naam
+                    <label for="name" class="block text-sm font-serif text-amber-900 mb-2 tracking-[0.12em]">
+                      Volledige Naam
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       required
-                      class="w-full px-4 py-3 bg-[#fffffd] border-b-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none font-serif text-amber-900"
-                      placeholder="Je naam"
-                      style="border-radius: 0;"
+                      class="w-full px-4 py-3 bg-[#fffffd] border-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none font-serif text-amber-900"
+                      placeholder=""
+                      style="border-radius: 4px;"
                     />
                   </div>
 
                   <div>
-                    <label for="email" class="block text-sm font-serif text-amber-900 mb-2 tracking-wide">
-                      E-mail
+                    <label for="email" class="block text-sm font-serif text-amber-900 mb-2 tracking-[0.12em]">
+                      E-mailadres
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       required
-                      class="w-full px-4 py-3 bg-[#fffffd] border-b-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none font-serif text-amber-900"
-                      placeholder="jouw.email@voorbeeld.nl"
-                      style="border-radius: 0;"
+                      class="w-full px-4 py-3 bg-[#fffffd] border-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none font-serif text-amber-900"
+                      placeholder=""
+                      style="border-radius: 4px;"
                     />
                   </div>
 
                   <div>
-                    <label for="address" class="block text-sm font-serif text-amber-900 mb-2 tracking-wide">
+                    <label for="address" class="block text-sm font-serif text-amber-900 mb-2 tracking-[0.12em]">
                       Adres
                     </label>
                     <textarea
@@ -93,16 +115,16 @@
                       name="address"
                       rows="3"
                       required
-                      class="w-full px-4 py-3 bg-[#fffffd] border-b-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none resize-none font-serif text-amber-900"
-                      placeholder="Je adres"
-                      style="border-radius: 0;"
+                      class="w-full px-4 py-3 bg-[#fffffd] border-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none resize-none font-serif text-amber-900"
+                      placeholder=""
+                      style="border-radius: 4px;"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
                     class="w-full bg-gradient-to-b from-amber-700 to-amber-800 text-[#fffffe] py-4 font-serif tracking-widest uppercase text-sm hover:from-amber-800 hover:to-amber-900 transition-all shadow-md hover:shadow-lg border border-amber-900/20"
-                    style="border-radius: 0;">
+                    style="border-radius: 4px;">
                     Versturen
                   </button>
                 </form>
