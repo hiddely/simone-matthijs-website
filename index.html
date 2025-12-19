@@ -2,180 +2,231 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Save the date: Simone &amp; Matthijs gaan trouwen!</title>
+    <title>Simone & Matthijs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://simonematthijsgaantrouwen.nl/" />
-    <meta property="og:title" content="Save the date: Simone &amp; Matthijs gaan trouwen!" />
-    <meta property="og:description" content="21 + 22 + 23 augustus 2026, Château Soulac, Bordeaux" />
-    <meta property="og:image" content="https://simonematthijsgaantrouwen.nl/preview_sm_zon.jpeg" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+      body {
+        font-family: 'Didot', 'Bodoni MT', 'Playfair Display', Georgia, serif;
+        background: linear-gradient(to bottom right, #fffffe 0%, #fcfcfb 50%, #faf9f7 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Save the date: Simone &amp; Matthijs gaan trouwen!" />
-    <meta property="twitter:description" content="21 + 22 + 23 augustus 2026, Château Soulac, Bordeaux" />
-    <meta property="twitter:image" content="https://simonematthijsgaantrouwen.nl/preview_sm_zon.jpeg" />
-    <script type="module" crossorigin src="./assets/index.uXdsdPaP.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index.8En0fFkF.css">
+      /* Paper texture overlay */
+      .paper-texture {
+        position: absolute;
+        inset: 0;
+        opacity: 0.2;
+        background-image: url('data:image/svg+xml,%3Csvg width=%22100%22 height=%22100%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 /%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.05%22/%3E%3C/svg%3E');
+      }
+
+      .container {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        max-width: 90%;
+      }
+
+      /* Silhouette container */
+      .silhouette-container {
+        position: relative;
+        margin: 0 auto;
+        max-width: 600px;
+        animation: fadeInScale 2s ease-out forwards;
+        opacity: 0;
+      }
+
+      @media (min-width: 768px) {
+        .silhouette-container {
+          padding: 0;
+        }
+      }
+
+      @keyframes fadeInScale {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Silhouette image */
+      .silhouette {
+        width: 100%;
+        height: auto;
+        opacity: 0.7;
+      }
+
+      /* Ornamental frame */
+      .frame {
+        position: absolute;
+        inset: -10px;
+        border: 2px solid #b8a089;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(139, 117, 93, 0.15);
+      }
+
+      @media (min-width: 768px) {
+        .frame {
+          inset: -20px;
+        }
+      }
+
+      /* Text */
+      .text {
+        margin-top: 3rem;
+        animation: fadeInUp 2s ease-out 1s forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .text h1 {
+        font-family: 'Cormorant Infant', 'Didot', 'Bodoni MT', 'Playfair Display', Georgia, serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: normal;
+        color: #78350f;
+        margin-bottom: 1rem;
+        letter-spacing: 0.05em;
+      }
+
+      .text h1 .ampersand {
+        color: #b45309;
+      }
+
+      .text p {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        color: #92400e;
+        font-style: italic;
+        letter-spacing: 0.1em;
+      }
+
+      /* Decorative elements */
+      .ornament {
+        width: 128px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(180, 83, 9, 0.3), transparent);
+        margin: 1.5rem auto;
+        animation: fadeIn 2s ease-out 1.5s forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Loading dots */
+      .loading {
+        margin-top: 2rem;
+        animation: fadeIn 2s ease-out 2s forwards;
+        opacity: 0;
+      }
+
+      .dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(180, 83, 9, 0.6);
+        margin: 0 4px;
+        animation: pulse 1.4s infinite ease-in-out both;
+      }
+
+      .dot:nth-child(1) { animation-delay: -0.32s; }
+      .dot:nth-child(2) { animation-delay: -0.16s; }
+
+      @keyframes pulse {
+        0%, 80%, 100% {
+          opacity: 0.3;
+          transform: scale(0.8);
+        }
+        40% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
   </head>
-  <body class="antialiased">
-    <div id="app">
-      <div class="min-h-screen bg-gradient-to-br from-[#fffffe] via-[#fcfcfb] to-[#faf9f7] flex items-center justify-center px-4 py-12 relative overflow-hidden">
-        <!-- Paper texture overlay -->
-        <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,%3Csvg width=%22100%22 height=%22100%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 /%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.05%22/%3E%3C/svg%3E');"></div>
+  <body>
+    <div class="paper-texture"></div>
 
-        <!-- Left circular background image with gradient fade -->
-        <div class="absolute left-8 md:left-16 top-1/2 -translate-y-1/2 w-80 h-80 md:w-[450px] md:h-[450px] opacity-10 pointer-events-none" style="position: absolute; left: 2rem; top: 50%; transform: translateY(-50%); width: 20rem; height: 20rem; opacity: 0.1; pointer-events: none;">
-          <div class="w-full h-full relative" style="width: 100%; height: 100%; position: relative;">
-            <div class="absolute inset-0 rounded-full overflow-hidden" style="position: absolute; inset: 0; border-radius: 9999px; overflow: hidden;">
-              <img src="./chateausoulac.jpg" alt="" class="w-full h-full object-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-            </div>
-            <div class="absolute inset-0" style="position: absolute; inset: 0; background: radial-gradient(circle, transparent 0%, transparent 40%, #fffffe 70%);"></div>
-          </div>
-        </div>
+    <div class="container">
+      <div class="silhouette-container">
+        <div class="frame"></div>
+        <img src="./chateau_silhouette.jpeg" alt="Château" class="silhouette" />
+      </div>
 
-
-        <!-- Right circular background image with gradient fade -->
-        <div class="absolute right-8 md:right-16 top-1/2 -translate-y-1/2 w-80 h-80 md:w-[450px] md:h-[450px] opacity-10 pointer-events-none" style="position: absolute; right: 2rem; top: 50%; transform: translateY(-50%); width: 20rem; height: 20rem; opacity: 0.1; pointer-events: none;">
-          <div class="w-full h-full relative" style="width: 100%; height: 100%; position: relative;">
-            <div class="absolute inset-0 rounded-full overflow-hidden" style="position: absolute; inset: 0; border-radius: 9999px; overflow: hidden;">
-              <img src="./chateausoulac.jpg" alt="" class="w-full h-full object-cover" style="width: 100%; height: 100%; object-fit: cover;" />
-            </div>
-            <div class="absolute inset-0" style="position: absolute; inset: 0; background: radial-gradient(circle, transparent 0%, transparent 40%, #fffffe 70%);"></div>
-          </div>
-        </div>
-
-        <div class="max-w-4xl w-full fade-in relative z-10">
-          <!-- Ornamental border container -->
-          <div class="bg-gradient-to-br from-[#fffffe] to-[#fcfcfb] p-1 shadow-2xl" style="border: 2px solid #b8a089;">
-            <div class="bg-gradient-to-br from-[#fffffe] to-[#fdfbf7] border-4 border-double border-amber-700/20 p-4 md:p-12" style="border-color: rgba(139, 117, 93, 0.2);">
-
-              <!-- Decorative top ornament -->
-              <div class="text-center mb-8">
-                <p class="text-amber-700/60 text-md tracking-widest uppercase font-serif mb-3">Save the Date</p>
-                <h1 class="text-5xl mt-4 md:text-5xl font-serif text-amber-900 mb-2 tracking-wide" style="font-family: 'Didot', 'Bodoni MT', 'Playfair Display', Georgia, serif;">
-                  Simone <span class="text-amber-700">&</span> Matthijs
-                </h1>
-                <div class="w-32 h-px bg-gradient-to-r from-transparent via-amber-700/30 to-transparent mx-auto my-6 delayed-fade opacity-0"></div>
-
-                <!-- Date and Location side by side -->
-                <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-4 delayed-fade opacity-0" style="opacity: 0;">
-                  <!-- Date -->
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-amber-700/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <p class="text-amber-800 text-lg md:text-xl font-serif italic">
-                      <span id="date-clickable" class="cursor-pointer hover:text-amber-900 transition-colors">21 + 22 + 23 augustus 2026</span>
-                    </p>
-                  </div>
-
-                  <!-- Location -->
-                  <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-amber-700/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <p class="text-amber-800 text-lg md:text-xl font-serif italic">
-                      <a href="https://maps.app.goo.gl/qscye97bysdv8foR7" target="_blank" rel="noopener noreferrer" class="cursor-pointer hover:text-amber-900 transition-colors">Ch&acirc;teau Soulac, Bordeaux</a>
-                    </p>
-                  </div>
-                </div>
-
-                <p class="text-amber-700/70 text-sm font-serif tracking-wide uppercase delayed-fade opacity-0 mt-6">Laat je adres achter zodat we je de uitnodiging kunnen sturen</p>
-              </div>
-
-              <!-- Form section with vintage paper style -->
-              <div class="md:mx-32 bg-[#fffffd] border border-amber-700/10 shadow-inner p-6 md:p-8 mt-8 extra-delayed-fade opacity-0" style="opacity: 0;">
-                <form id="signup-form" class="space-y-6">
-                  <div>
-                    <label for="name" class="block text-sm font-serif text-amber-900 mb-2 tracking-[0.12em]">
-                      Volledige Naam
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      class="w-full px-4 py-3 bg-[#fffffd] border-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none font-serif text-amber-900"
-                      placeholder=""
-                      style="border-radius: 4px;"
-                    />
-                  </div>
-
-                  <div>
-                    <label for="email" class="block text-sm font-serif text-amber-900 mb-2 tracking-[0.12em]">
-                      E-mailadres
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      class="w-full px-4 py-3 bg-[#fffffd] border-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none font-serif text-amber-900"
-                      placeholder=""
-                      style="border-radius: 4px;"
-                    />
-                  </div>
-
-                  <div>
-                    <label for="phone" class="block text-sm font-serif text-amber-900 mb-2 tracking-[0.12em]">
-                      Telefoonnummer
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      class="w-full px-4 py-3 bg-[#fffffd] transition-all outline-none font-serif text-amber-900"
-                      placeholder=""
-                      style="border-radius: 4px;"
-                    />
-                  </div>
-
-                  <div>
-                    <label for="address" class="block text-sm font-serif text-amber-900 mb-2 tracking-[0.12em]">
-                      Adres
-                    </label>
-                    <textarea
-                      id="address"
-                      name="address"
-                      rows="3"
-                      required
-                      class="w-full px-4 py-3 bg-[#fffffd] border-2 border-amber-700/20 focus:border-amber-700 transition-all outline-none resize-none font-serif text-amber-900"
-                      placeholder=""
-                      style="border-radius: 4px;"
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    class="w-full bg-gradient-to-b from-amber-700 to-amber-800 text-[#fffffe] py-4 font-serif tracking-widest uppercase text-sm hover:from-amber-800 hover:to-amber-900 transition-all shadow-md hover:shadow-lg border border-amber-900/20"
-                    style="border-radius: 4px;">
-                    Versturen
-                  </button>
-                </form>
-              </div>
-
-              <!-- Decorative bottom ornament -->
-              <div class="text-center mt-8 delayed-fade opacity-0">
-                <div class="w-32 h-px bg-gradient-to-r from-transparent via-amber-700/30 to-transparent mx-auto mb-4"></div>
-                <p class="text-amber-700/70 text-sm font-serif italic">
-                  We kunnen niet wachten om dit met jullie te vieren!
-                </p>
-                <div class="text-amber-700/40 text-2xl mt-4">✦</div>
-              </div>
-
-            </div>
-          </div>
+      <div class="text">
+        <h1>Simone <span class="ampersand">&</span> Matthijs</h1>
+        <div class="ornament"></div>
+        <p>21 • 22 • 23 Augustus 2026</p>
+        <div class="loading">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script>
+      // Initialize confetti
+      const jsConfetti = new JSConfetti();
+
+      // Trigger subtle confetti after page loads
+      setTimeout(() => {
+        jsConfetti.addConfetti({
+          confettiColors: [
+            '#b8a089', '#d4a373', '#8b755d', '#c9a978'
+          ],
+          confettiRadius: 3,
+          confettiNumber: 400,
+        });
+      }, 800);
+
+      // Add a gentle second burst
+      // setTimeout(() => {
+      //   jsConfetti.addConfetti({
+      //     confettiColors: [
+      //       '#b8a089', '#d4a373', '#8b755d', '#c9a978'
+      //     ],
+      //     confettiRadius: 2.5,
+      //     confettiNumber: 30,
+      //   });
+      // }, 1800);
+
+      // Redirect to sayido.com after 4 seconds
+      // disabled for now to test
+      // setTimeout(() => {
+      //   window.location.href = 'https://sayi.do/simoneandmatthijs5826';
+      // }, 4000);
+    </script>
   </body>
 </html>
